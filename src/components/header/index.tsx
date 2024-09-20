@@ -18,7 +18,6 @@ const TesteEqSeedHeader: React.FC = () => {
         color={testeeqseed_theme.theme.grey?.light}
         onTap={() => {
           dispatch(setMenuState(!menu_state.isOpenMenu));
-          console.log(menu_state.isOpenMenu);
         }}
       />
       <img src={logo} alt="" />

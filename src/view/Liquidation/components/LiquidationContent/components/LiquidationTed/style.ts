@@ -38,18 +38,21 @@ export const LiquidationTedContent = styled.div<{ $isselected: boolean }>`
     transition: 400ms;
   }
   .ted_info {
-    padding: 22px 12px;
+    padding: 12px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    justify-content: center;
+    justify-content: space-around;
     background-color: ${testeeqseed_theme.theme.white};
     max-width: 360px;
     margin: 0 auto;
-    a {
+    b {
       color: ${testeeqseed_theme.theme.green.strong};
       font-weight: 600;
       text-decoration: underline;
+    }
+    ul {
+      margin: 0px;
     }
   }
 

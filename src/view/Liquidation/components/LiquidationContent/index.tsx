@@ -8,6 +8,8 @@ import LiquidationHeader from "./components/LiquidationHeader";
 import LiquidationTed from "./components/LiquidationTed";
 import LiquidationPix from "./components/LiquidationPix";
 import ImportantConsiderations from "./components/ImportantConsiderations";
+import QuestionsAndSuggestions from "./components/QuestionsAndSuggestions";
+import PaymentProof from "./components/PaymentProof";
 
 const LiquidationContent: React.FC = () => {
   const state = useSelector((state: RootState) => state.liquidation);
@@ -22,9 +24,11 @@ const LiquidationContent: React.FC = () => {
       <LiquidationTed state={state} />
       <div className="line"></div>
       <Heading5 color={testeeqseed_theme.theme.green.strong} fontWeight={700}>
-        Considerações importantes!
+        CONSIDERAÇÕES IMPORTANTES
       </Heading5>
       <ImportantConsiderations />
+      <PaymentProof state={state} />
+      <QuestionsAndSuggestions />
     </LiquidationContentContainer>
   );
 };

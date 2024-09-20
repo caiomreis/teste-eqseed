@@ -16,13 +16,13 @@ const LiquidationPix: React.FC<{ state: LiquidationSliceType }> = ({
   const dispatch = useAppDispatch();
   return (
     <LiquidationPixContent
-      $isselected={state.paymentMethod == PaymentMethod.pix}
+      $isselected={state.paymentMethod === PaymentMethod.pix}
       onClick={() => dispatch(setPaymentMethod(PaymentMethod.pix))}
     >
       <div className="header">
         <Body4
           color={
-            state.paymentMethod == PaymentMethod.pix
+            state.paymentMethod === PaymentMethod.pix
               ? testeeqseed_theme.theme.white
               : testeeqseed_theme.theme.black
           }
@@ -39,7 +39,17 @@ const LiquidationPix: React.FC<{ state: LiquidationSliceType }> = ({
             height={120}
           />
 
-          <button className="copy_button">
+          <button
+            className="copy_button"
+            onClick={() => {
+              navigator.clipboard.writeText(
+                state.liquidationSelected?.chave_pix!
+              );
+              alert(
+                `Chave PIX: ${state.liquidationSelected?.chave_pix!}, copiada!`
+              );
+            }}
+          >
             <Body4 color={testeeqseed_theme.theme.black} fontWeight={600}>
               COPIAR CHAVE PIX
             </Body4>

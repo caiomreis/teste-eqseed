@@ -1,15 +1,18 @@
 import { SubMenuContent, TesteEqSeedMenuAside } from "./style";
-import React, { useState } from "react";
+import React from "react";
 import TesteEqSeedMenuButton from "./components/menu_button";
 import { useSelector } from "react-redux";
 import { RootState, useAppDispatch } from "../../store/store";
 import {
+  PaymentMethod,
+  removeAllProofFiles,
   setliquidationSelected,
+  setPaymentMethod,
   setSelectedPage,
 } from "../../store/ofertas_slice";
 import TesteEqSeedSubMenuButton from "./components/sub_menu_button";
 
-const TesteEqSeedMenu: React.FC = ({}) => {
+const TesteEqSeedMenu: React.FC = () => {
   const dispatch = useAppDispatch();
   const state = useSelector((state: RootState) => state.liquidation);
   const menu_state = useSelector((state: RootState) => state.menu);
@@ -32,23 +35,21 @@ const TesteEqSeedMenu: React.FC = ({}) => {
         }}
       />
       <SubMenuContent>
-        {!state.loading ? (
+        {!state.loading &&
           state.state?.map((value, i) => (
             <TesteEqSeedSubMenuButton
               key={i}
               isSelected={
-                state.liquidationSelected?.nome_oferta == value.nome_oferta
+                state.liquidationSelected?.nome_oferta === value.nome_oferta
               }
               name={value.nome_oferta}
               click={() => {
                 dispatch(setliquidationSelected(value));
-                console.log(value);
+                dispatch(setPaymentMethod(PaymentMethod.pix));
+                dispatch(removeAllProofFiles());
               }}
             />
-          ))
-        ) : (
-          <span></span>
-        )}
+          ))}
       </SubMenuContent>
       <TesteEqSeedMenuButton
         name="Meu perfil"

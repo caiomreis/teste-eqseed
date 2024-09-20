@@ -1,7 +1,6 @@
 import React from "react";
 
 import { IconConteiner } from "./style";
-import { click } from "@testing-library/user-event/dist/click";
 
 const TesteIcon: React.FC<{
   icon?: string;

@@ -11,12 +11,23 @@ export interface LiquidationSliceType {
   state?: OfertasModelResponse[];
   paymentMethod: PaymentMethod;
   liquidationSelected?: OfertasModelResponse;
+  files: FilesModel[];
+}
+export interface FilesModel {
+  path: string;
+  name: string;
+  lastModified: number;
+  lastModifiedDate: string;
+  webkitRelativePath: string;
+  type: string;
+  size: number;
 }
 
 const initialState: LiquidationSliceType = {
   loading: true,
   selectedPage: "Liquidação",
   paymentMethod: PaymentMethod.pix,
+  files: [],
 };
 
 const liquidation_slice = createSlice({
@@ -38,6 +49,19 @@ const liquidation_slice = createSlice({
     setliquidationSelected(state, action: PayloadAction<OfertasModelResponse>) {
       state.liquidationSelected = action.payload;
     },
+    setProofFiles(state, action: PayloadAction<FilesModel>) {
+      if (
+        state.files.filter((el) => action.payload.name === el.name).length === 0
+      ) {
+        state.files.push(action.payload);
+      }
+    },
+    removeProofFiles(state, action: PayloadAction<string>) {
+      state.files = state.files.filter((el) => action.payload !== el.name);
+    },
+    removeAllProofFiles(state) {
+      state.files = [];
+    },
   },
 });
 
@@ -47,5 +71,8 @@ export const {
   setLiquidationState,
   setliquidationSelected,
   setPaymentMethod,
+  setProofFiles,
+  removeProofFiles,
+  removeAllProofFiles,
 } = liquidation_slice.actions;
 export default liquidation_slice.reducer;

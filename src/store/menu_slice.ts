@@ -1,5 +1,4 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
-import { OfertasModelResponse } from "../shared/models/ofertas_response.model";
 
 const initialState = {
   isOpenMenu: true,

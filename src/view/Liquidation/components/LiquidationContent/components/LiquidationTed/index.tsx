@@ -14,13 +14,13 @@ const LiquidationTed: React.FC<{ state: LiquidationSliceType }> = ({
   const dispatch = useAppDispatch();
   return (
     <LiquidationTedContent
-      $isselected={state.paymentMethod == PaymentMethod.ted}
+      $isselected={state.paymentMethod === PaymentMethod.ted}
       onClick={() => dispatch(setPaymentMethod(PaymentMethod.ted))}
     >
       <div className="header">
         <Body4
           color={
-            state.paymentMethod == PaymentMethod.ted
+            state.paymentMethod === PaymentMethod.ted
               ? testeeqseed_theme.theme.white
               : testeeqseed_theme.theme.black
           }
@@ -33,7 +33,7 @@ const LiquidationTed: React.FC<{ state: LiquidationSliceType }> = ({
         <div className="ted_info">
           <Body4 color={testeeqseed_theme.theme.grey.medium} fontWeight={400}>
             TEDs são válidos mas{" "}
-            <a>possuem desvantagens em relação a Chave PIX.</a> sendo essas:
+            <b>possuem desvantagens em relação a Chave PIX.</b> sendo essas:
           </Body4>
 
           <ul>
@@ -55,7 +55,7 @@ const LiquidationTed: React.FC<{ state: LiquidationSliceType }> = ({
             </li>
           </ul>
           <Body4 color={testeeqseed_theme.theme.grey.medium} fontWeight={400}>
-            Por esses motivos, recomendamos que utilize a <a>Chave Pix</a> como
+            Por esses motivos, recomendamos que utilize a <b>Chave Pix</b> como
             metodo de pagamento
           </Body4>
         </div>

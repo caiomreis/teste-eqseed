@@ -41,6 +41,7 @@ const TesteEqSeedMenu: React.FC = () => {
         click={() => {
           dispatch(setSelectedPage("Liquidação"));
         }}
+        notification_number={state.state?.length}
       />
       <SubMenuContent>
         {!state.loading &&

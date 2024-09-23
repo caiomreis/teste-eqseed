@@ -52,13 +52,13 @@ const PaymentProof: React.FC<{ state: LiquidationSliceType }> = ({ state }) => {
       >
         {({ getRootProps, getInputProps }) => (
           <>
-            {state.files.length == 0 && (
+            {state.files.length === 0 && (
               <div className="div_input" {...getRootProps()}>
                 <input {...getInputProps()} />
                 {isDragIn ? <LeaveFile /> : <NoFileDroped />}
               </div>
             )}
-            {state.files.length != 0 && (
+            {state.files.length !== 0 && (
               <div className="div_input">
                 <input {...getInputProps()} />
                 <WithFile files={state.files} getInput={getRootProps} />

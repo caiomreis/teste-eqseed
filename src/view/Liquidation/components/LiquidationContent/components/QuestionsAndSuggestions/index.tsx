@@ -15,7 +15,11 @@ const QuestionsAndSuggestions: React.FC = () => {
       <div className="content">
         <div className="green_card">
           <Caution1 fontWeight={600}>
-            <a target="_blank" href="https://wa.me/5531982652636">
+            <a
+              target="_blank"
+              href="https://wa.me/5531982652636"
+              rel="noreferrer"
+            >
               CHAT
             </a>
           </Caution1>

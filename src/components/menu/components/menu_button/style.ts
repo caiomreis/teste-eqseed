@@ -8,7 +8,7 @@ export const MenuButton = styled.button<{
   height: 44px;
   padding: 0px 16px;
   flex-direction: row;
-  justify-content: flex-start;
+  justify-content: space-between;
   align-items: center;
   gap: 10px;
   flex-shrink: 0;
@@ -26,4 +26,31 @@ export const MenuButton = styled.button<{
   cursor: pointer;
   min-width: 200px;
   overflow: hidden;
+  .content {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .number_content {
+    text-align: center;
+    background-color: ${testeeqseed_theme.theme.white};
+    padding: 1px 16px;
+    border-radius: 15px;
+    position: relative;
+    float: left;
+  }
+  .number_content::after {
+    content: " ";
+    background: red;
+    width: 10px;
+    height: 10px;
+    padding: 0.5px;
+    position: absolute;
+    border-radius: 100%;
+    bottom: -2px;
+    right: -1px;
+  }
 `;

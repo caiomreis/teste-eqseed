@@ -19,6 +19,14 @@ export const TesteEqSeedMenuAside = styled.aside<{ $isopen: boolean }>`
   transition: 400ms;
   padding: ${(props) => (props.$isopen ? "26px 8px" : "26px 0px")};
   box-sizing: border-box;
+
+  @media screen and (max-width: 1000px) {
+    position: fixed;
+    width: 96vw;
+    height: ${(props) => (props.$isopen ? "90vh" : "0vh")};
+    padding: ${(props) => (props.$isopen ? "26px 8px" : "0px 8px")};
+    left: 2vw;
+  }
 `;
 
 export const MenuButton = styled.button<{

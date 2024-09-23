@@ -10,6 +10,7 @@ import LiquidationPix from "./components/LiquidationPix";
 import ImportantConsiderations from "./components/ImportantConsiderations";
 import QuestionsAndSuggestions from "./components/QuestionsAndSuggestions";
 import PaymentProof from "./components/PaymentProof";
+import LineSkeleton from "../../../../components/skeleton/line_skeleton";
 
 const LiquidationContent: React.FC = () => {
   const state = useSelector((state: RootState) => state.liquidation);
@@ -20,8 +21,18 @@ const LiquidationContent: React.FC = () => {
       <Body3 fontWeight={600} className="under">
         ESCOLHA SUA FORMA DE PAGAMENTO
       </Body3>
-      <LiquidationPix state={state} />
-      <LiquidationTed state={state} />
+
+      {state.loading ? (
+        <LineSkeleton width={"100%"} height={48} />
+      ) : (
+        <LiquidationPix state={state} />
+      )}
+      {state.loading ? (
+        <LineSkeleton width={"100%"} height={48} />
+      ) : (
+        <LiquidationTed state={state} />
+      )}
+
       <div className="line"></div>
       <Heading5 color={testeeqseed_theme.theme.green.strong} fontWeight={700}>
         CONSIDERAÇÕES IMPORTANTES

@@ -40,6 +40,11 @@ export const Body2 = styled.span<{
     font-size: 14px;
     line-height: 18px;
   }
+
+  @media screen and (max-width: 600px) {
+    font-size: 12px;
+    line-height: 16px;
+  }
 `;
 export const Body3 = styled.span<{
   color?: string;
@@ -59,6 +64,10 @@ export const Body3 = styled.span<{
   @media screen and (max-width: 1200px) {
     font-size: 12px;
     line-height: 16px;
+  }
+  @media screen and (max-width: 600px) {
+    font-size: 10px;
+    line-height: 14px;
   }
 `;
 export const Body4 = styled.span<{

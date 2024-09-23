@@ -10,6 +10,9 @@ export const LiquidationContainer = styled.div<{ $isopenmenu: boolean }>`
   gap: ${(props) => (props.$isopenmenu ? "24px" : "0px")};
   transition: 400ms;
   justify-items: start;
-
   box-sizing: border-box;
+
+  @media screen and (max-width: 1000px) {
+    grid-template-columns: 1fr;
+  }
 `;

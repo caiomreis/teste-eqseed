@@ -66,6 +66,17 @@ export const LiquidationPixContent = styled.div<{ $isselected: boolean }>`
     grid-row-gap: 0px;
     background-color: ${testeeqseed_theme.theme.background_grey_medium};
   }
+
+  @media screen and (max-width: 1000px) {
+    .content {
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr;
+      border-bottom-right-radius: 12px;
+      border-bottom-left-radius: 12px;
+      width: 100%;
+      height: ${(props) => (props.$isselected ? "482px" : "0px")};
+    }
+  }
 `;
 
 export const PaymentInfosContent = styled.div`
@@ -76,4 +87,7 @@ export const PaymentInfosContent = styled.div`
   justify-content: center;
   height: 80px;
   padding: 0px 0px 0px 40px;
+  @media screen and (max-width: 600px) {
+    padding: 0px 0px 0px 16px;
+  }
 `;

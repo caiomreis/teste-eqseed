@@ -4,6 +4,7 @@ import { Body3, Body4 } from "../../../../../../../components/text/body/style";
 import { Heading5 } from "../../../../../../../components/text/heading/style";
 import {
   FilesModel,
+  removeAllProofFiles,
   removeProofFiles,
 } from "../../../../../../../store/ofertas_slice";
 import { useAppDispatch } from "../../../../../../../store/store";
@@ -48,7 +49,13 @@ const WithFile: React.FC<{
             />
           </button>
         </div>
-        <button className="green">
+        <button
+          className="green"
+          onClick={() => {
+            alert("Arquivos enviados!");
+            dispatch(removeAllProofFiles());
+          }}
+        >
           <Body3 color={testeeqseed_theme.theme.white}>FINALIZAR ENVIO</Body3>
         </button>
       </div>

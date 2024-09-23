@@ -20,6 +20,21 @@ export const LiquidationContentHeader = styled.div`
     display: flex;
     justify-content: flex-end;
   }
+
+  @media screen and (max-width: 1000px) {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    .content_values {
+      display: flex;
+      justify-content: center;
+    }
+    .title_field {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      max-width: 100%;
+    }
+  }
 `;
 export const LiquidationHeaderValues = styled.div`
   display: grid;
@@ -48,5 +63,8 @@ export const LiquidationHeaderValues = styled.div`
     padding: 12px;
     border-top-right-radius: 12px;
     border-bottom-right-radius: 12px;
+  }
+  @media screen and (max-width: 1000px) {
+    max-width: 100%;
   }
 `;

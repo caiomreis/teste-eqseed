@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import testeeqseed_theme from "../../../../../../style/theme_colors";
-import { toMoney } from "./../../../../../../utils/numberUtils";
 
 export const PaymentProofContent = styled.div`
   display: flex;
@@ -29,7 +28,8 @@ export const NoFileDropedContent = styled.div`
   justify-content: center;
   flex-direction: column;
   gap: 40px;
-
+  padding: 12px;
+  box-sizing: border-box;
   .text_content {
     display: flex;
     flex-direction: row;
@@ -52,6 +52,13 @@ export const NoFileDropedContent = styled.div`
     gap: 12px;
   }
   @media screen and (max-width: 1000px) {
+    .text_content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 14px;
+      justify-content: center;
+    }
   }
 `;
 export const LeaveFileContent = styled.div`
@@ -110,6 +117,7 @@ export const WithFileContent = styled.div`
     flex-wrap: nowrap;
     gap: 19px;
   }
+
   button.green {
     background-color: ${testeeqseed_theme.theme.green.strong};
     border: none;
@@ -137,7 +145,16 @@ export const WithFileContent = styled.div`
     border: solid 1px ${testeeqseed_theme.theme.green.strong};
     cursor: pointer;
   }
-  @media screen and (max-width: 1000px) {
+  @media screen and (max-width: 600px) {
+    .buttons {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      flex-wrap: nowrap;
+      gap: 19px;
+    }
   }
 `;
 
@@ -160,5 +177,8 @@ export const FileCardContet = styled.div`
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
+  }
+  @media screen and (max-width: 600px) {
+    max-width: 100%;
   }
 `;

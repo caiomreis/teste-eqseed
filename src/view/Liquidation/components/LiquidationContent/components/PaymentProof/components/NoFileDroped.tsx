@@ -17,6 +17,7 @@ const NoFileDroped: React.FC = () => {
           <Heading4
             color={testeeqseed_theme.theme.grey.strong}
             fontWeight={500}
+            textalign="center"
           >
             Anexe aqui seu(s) comprovantes(s) de pagamento.
           </Heading4>

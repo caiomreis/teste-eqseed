@@ -1,5 +1,5 @@
 import { SubMenuContent, TesteEqSeedMenuAside } from "./style";
-import React from "react";
+import React, { useEffect } from "react";
 import TesteEqSeedMenuButton from "./components/menu_button";
 import { useSelector } from "react-redux";
 import { RootState, useAppDispatch } from "../../store/store";
@@ -11,11 +11,19 @@ import {
   setSelectedPage,
 } from "../../store/ofertas_slice";
 import TesteEqSeedSubMenuButton from "./components/sub_menu_button";
+import useViewSize from "../../hooks/useViewSize";
+import { setMenuState } from "../../store/menu_slice";
 
 const TesteEqSeedMenu: React.FC = () => {
   const dispatch = useAppDispatch();
   const state = useSelector((state: RootState) => state.liquidation);
   const menu_state = useSelector((state: RootState) => state.menu);
+  const { dimensions } = useViewSize();
+
+  useEffect(() => {
+    if (dimensions.width < 1000) dispatch(setMenuState(false));
+  }, [dimensions]);
+
   return (
     <TesteEqSeedMenuAside $isopen={menu_state.isOpenMenu}>
       <TesteEqSeedMenuButton
@@ -23,7 +31,7 @@ const TesteEqSeedMenu: React.FC = () => {
         isSelected={"Meu portifólio" === state.selectedPage}
         icon={"savings"}
         click={() => {
-          dispatch(setSelectedPage("Meu portifólio"));
+          alert("Não disponivel");
         }}
       />
       <TesteEqSeedMenuButton
@@ -56,7 +64,7 @@ const TesteEqSeedMenu: React.FC = () => {
         isSelected={"Meu perfil" === state.selectedPage}
         icon={"person"}
         click={() => {
-          dispatch(setSelectedPage("Meu perfil"));
+          alert("Não disponivel");
         }}
       />
     </TesteEqSeedMenuAside>

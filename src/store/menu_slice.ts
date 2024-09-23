@@ -1,7 +1,7 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  isOpenMenu: true,
+  isOpenMenu: window.innerWidth > 1000 ? true : false,
 };
 
 const menu_slice = createSlice({

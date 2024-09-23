@@ -15,8 +15,8 @@
 ```TypeScript
 
   src
-    |-- Assets(Diretório reservado para imagens, fontes e afins)
-    |-- Components(Diretorio responsavel pelo components que se repetem no projeto)
+    |-- assets(Diretório reservado para imagens, fontes e afins)
+    |-- components(Diretorio responsavel pelo components que se repetem no projeto)
     |-- view(Diretorio responsavel pelo components que se repetem no projeto)
     |-- gateways(Diretório responsável pela apresentação)
     |-- hooks(Diretorio responsavel pela logica das telas)

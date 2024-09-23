@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/teste-eqseed/static/css/main.2f387a12.css",
+    "main.js": "/teste-eqseed/static/js/main.2cd871c2.js",
+    "index.html": "/teste-eqseed/index.html",
+    "main.2f387a12.css.map": "/teste-eqseed/static/css/main.2f387a12.css.map",
+    "main.2cd871c2.js.map": "/teste-eqseed/static/js/main.2cd871c2.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.2f387a12.css",
+    "static/js/main.2cd871c2.js"
+  ]
+}
